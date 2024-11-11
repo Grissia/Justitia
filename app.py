@@ -4,11 +4,7 @@ from datetime import datetime
 app = Flask(__name__)
 
 # 模擬一個簡單的記分板 (可以用資料庫替代)
-scoreboard = [
-    {"name": "Alice", "score": 100},
-    {"name": "Bob", "score": 80},
-    {"name": "Charlie", "score": 60}
-]
+scoreboard = []
 
 LOG_FILE = "scoreboard.log"
 

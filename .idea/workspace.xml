@@ -4,16 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e7dc2e55-a1a6-4f81-997a-6f21b11adc1b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/scoreBoard.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+    <list default="true" id="e7dc2e55-a1a6-4f81-997a-6f21b11adc1b" name="Changes" comment="Feat: 基礎架構完成">
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,14 +65,38 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1731327730745</updated>
-      <workItem from="1731327732205" duration="1233000" />
+      <workItem from="1731327732205" duration="1558000" />
     </task>
+    <task id="LOCAL-00001" summary="Feat: 基礎架構完成">
+      <option name="closed" value="true" />
+      <created>1731329272452</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1731329272452</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Feat: 基礎架構完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="Feat: 基礎架構完成" />
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/scoreBoard$app.coverage" NAME="app Coverage Results" MODIFIED="1731328952640" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/scoreBoard$app.coverage" NAME="app Coverage Results" MODIFIED="1731329031486" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
