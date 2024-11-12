@@ -1,12 +1,23 @@
 from flask import Flask, render_template, request, redirect, url_for
 from datetime import datetime
+import json
 
 app = Flask(__name__)
-
-# 模擬一個簡單的記分板 (可以用資料庫替代)
-scoreboard = []
-
+SCOREBOARD_FILE = "scoreboard.json"
 LOG_FILE = "scoreboard.log"
+
+def save_scoreboard():
+    with open(SCOREBOARD_FILE, 'w') as f:
+        json.dump(scoreboard, f)
+
+def load_scoreboard():
+    try:
+        with open(SCOREBOARD_FILE, 'r') as f:
+            return json.load(f)
+    except FileExistsError:
+        return []
+
+scoreboard = load_scoreboard()
 
 def log_action(action, name=None, score=None):
     """將操作記錄儲存到日誌檔案中"""
@@ -32,6 +43,7 @@ def add_or_update_score(name, score):
 
     # 每次更新後依分數從高到低排序
     scoreboard.sort(key=lambda x: x["score"], reverse=True)
+    save_scoreboard()
 
 @app.route('/')
 def index():
@@ -50,7 +62,8 @@ def delete_score(index):
     if 0 <= index < len(scoreboard):
         player = scoreboard.pop(index)
         log_action('delete', player['name'])
+        save_scoreboard()
     return redirect(url_for('index'))
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
