@@ -1,0 +1,10 @@
+services:
+  flask-app:
+    build: .
+    container_name: justitia
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./scoreboard.log:/app/scoreboard.log
+      - ./scoreboard.json:/app/scoreboard.json
+    restart: always
