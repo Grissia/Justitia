@@ -1,0 +1,95 @@
+/* 設置背景顏色 */
+body {
+    background-color: #b3d9ff; /* 淺藍色背景 */
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* 使網頁垂直置中 */
+    margin: 0;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 600px; /* 限制最大寬度 */
+}
+
+h1 {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.preset-section {
+    margin-bottom: 20px;
+}
+
+.preset-list {
+    list-style: none;
+    padding: 0;
+}
+
+.preset-list li {
+    background-color: #f1f1f1;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.input-section {
+    margin-bottom: 20px;
+    width: 100%; /* 確保寬度為 100% */
+    max-width: 100%; /* 限制最大寬度為 100% */
+    box-sizing: border-box; /* 包括 padding 和 border 的寬度 */
+}
+
+.input-label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+    box-sizing: border-box; /* 包括 padding 和 border 的寬度 */
+}
+
+.btn {
+    background-color: #4CAF50; /* 綠色按鈕 */
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #45a049; /* 鼠標懸停時變深綠色 */
+}
+
+.result {
+    margin-top: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+#animation {
+    font-size: 1.5rem;
+    color: #ff6600; /* 動畫文字顏色 */
+    font-weight: bold;
+}

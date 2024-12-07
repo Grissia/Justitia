@@ -1,10 +1,18 @@
 services:
-  flask-app:
-    build: .
-    container_name: justitia
+  scoreboard:
+    build: ./scoreboard
+    container_name: justitia_scoreboard
     ports:
-      - "80:5000"
+      - "5000:5000"
     volumes:
-      - ./scoreboard.log:/app/scoreboard.log
-      - ./scoreboard.json:/app/scoreboard.json
+      - ./scoreboard/scoreboard.log:/app/scoreboard.log
+      - ./scoreboard/scoreboard.json:/app/scoreboard.json
+    restart: always
+  draw:
+    build: ./draw
+    container_name: justitia_draw
+    ports:
+      - "5001:5000"
+    volumes:
+      - ./draw/data/:/app/data/
     restart: always

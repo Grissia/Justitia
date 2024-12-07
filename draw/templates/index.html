@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>抽籤機 by Grissia</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎲 抽籤機 by Grissia 🎲</h1>
+        <form id="lotteryForm" method="POST" class="input-section">
+            <label for="items" class="input-label">🔤 輸入其他抽籤項目（用逗號分隔）：</label>
+            <textarea id="items" name="items" rows="4" placeholder="項目1, 項目2, 項目3">{{ ', '.join(numbers)}}</textarea>
+            <button type="submit" id="drawButton" class="btn">🎉 開始抽籤！</button>
+        </form>
+
+        <div class="result">
+            <div id="animation" class="hidden">🎉 抽中結果是：<span id="resultText"></span> 🎉</div>
+        </div>
+    </div>
+
+    <script>
+        // 從後端獲取預載入的號碼
+        fetch("/api/numbers")
+            .then(response => response.json())
+            .then(data => {
+                const list = document.getElementById("presetNumbers");
+                if (data.length > 0) {
+                    data.forEach(item => {
+                        const li = document.createElement("li");
+                        li.textContent = item;
+                        list.appendChild(li);
+                    });
+                } else {
+                    list.innerHTML = "<li>目前沒有預載入的號碼。</li>";
+                }
+            });
+
+        document.getElementById("lotteryForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const itemsInput = document.getElementById("items").value;
+            const items = itemsInput.split(",").map(item => item.trim()).filter(item => item);
+            const animation = document.getElementById("animation");
+            const resultText = document.getElementById("resultText");
+
+            if (items.length === 0) {
+                alert("請輸入至少一個項目！");
+                return;
+            }
+
+            // 開始動畫
+            animation.classList.remove("hidden");
+            resultText.textContent = "正在抽籤...";
+
+            // 模擬延遲效果
+            setTimeout(() => {
+                const finalResult = items[Math.floor(Math.random() * items.length)];
+                resultText.textContent = finalResult;
+            }, 1000); // 動畫顯示 2 秒後顯示結果
+        });
+    </script>
+</body>
+</html>
