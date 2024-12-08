@@ -16,3 +16,11 @@ services:
     volumes:
       - ./draw/data/:/app/data/
     restart: always
+  exchange:
+    build: ./exchange
+    container_name: justitia_exchange
+    ports:
+      - "5002:5000"
+    volumes:
+      - ./exchange/static/:/app/static/
+    restart: always
