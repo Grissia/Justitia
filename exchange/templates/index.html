@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聖誕交換禮物</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>聖誕交換禮物</h1>
+        <form method="POST" action="/">
+            <label for="numbers">🔤輸入參與者的座號（以逗號分隔）：</label><br>
+            <textarea id="numbers" name="numbers" rows="4" cols="50" placeholder="例如：1,2,3,4">{{ ', '.join(numbers) }}</textarea>
+            <button type="submit">🎉生成交換結果🎉</button>
+        </form>
+    </div>
+</body>
+</html>

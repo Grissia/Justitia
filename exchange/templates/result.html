@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>配對結果</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>配對結果</h1>
+            <div class="exchange-container">
+                {% for sender, receiver in result.items() %}
+                    <div class="participant">
+                        <img src="https://via.placeholder.com/60/ffffff/000000?text={{ '%02d' % receiver }}" alt="座號 {{ '%02d' % receiver }}">
+                    </div>
+                    <div class="arrow">➡️</div>
+                    {% if loop.index == loop.length %}
+                    <div class="participant">
+                        <img src="https://via.placeholder.com/60/ffffff/000000?text={{ '%02d' % first_participant }}" alt="座號 {{ '%02d' % receiver }}">
+                    </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        <a href="/">返回主頁</a>
+    </div>
+</body>
+</html>
